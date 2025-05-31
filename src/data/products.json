@@ -1,0 +1,629 @@
+{
+    "products": [
+        {
+            "id": "MLM2344107538",
+            "site_id": "MLM",
+            "title": "Gorra Mitchell & Ness Chicago Bulls Roja",
+            "seller_id": 1354839206,
+            "category_id": "MLM430273",
+            "price": 749,
+            "base_price": 749,
+            "currency_id": "MXN",
+            "initial_quantity": 2,
+            "available_quantity": 1,
+            "sold_quantity": 1,
+            "pictures": [
+                {
+                    "url": "http://http2.mlstatic.com/D_762505-MLM70590060013_072023-O.jpg",
+                    "size": "500x331",
+                    "max_size": "754x500"
+                },
+                {
+                    "url": "http://http2.mlstatic.com/D_997073-MLM70562203542_072023-O.jpg",
+                    "size": "500x347",
+                    "max_size": "719x500"
+                }
+            ],            
+            "condition": "new",
+            "variations": [
+                {
+                    "id": 178252068788,
+                    "price": 749,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "51993",
+                            "value_name": "Rojo",
+                            "values": [
+                                {
+                                    "id": "51993",
+                                    "name": "Rojo",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "6367305",
+                            "value_name": "Único",
+                            "values": [
+                                {
+                                    "id": "6367305",
+                                    "name": "Único",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                }
+            ],
+            "status": "active"
+        },
+        {
+            "id": "MLM2346362284",
+            "site_id": "MLM",
+            "title": "Gorra Mitchell & Ness Atlanta Hawks",
+            "seller_id": 1354839206,
+            "category_id": "MLM430273",
+            "price": 849,
+            "base_price": 849,
+            "currency_id": "MXN",
+            "available_quantity": 3,
+            "pictures": [
+                {
+                    "url": "http://http2.mlstatic.com/D_849348-MLM70580222664_072023-O.jpg",
+                    "size": "500x294",
+                    "max_size": "849x500"
+                },
+                {
+                    "url": "http://http2.mlstatic.com/D_600554-MLM70608063457_072023-O.jpg",
+                    "size": "500x321",
+                    "max_size": "777x500"
+                }
+            ],
+            "condition": "new",
+            "variations": [
+                {
+                    "id": 178260374868,
+                    "price": 849,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "51993",
+                            "value_name": "Rojo",
+                            "values": [
+                                {
+                                    "id": "51993",
+                                    "name": "Rojo",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": null,
+                            "value_name": "unitalla",
+                            "values": [
+                                {
+                                    "id": null,
+                                    "name": "unitalla",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                }
+            ],
+            "status": "active"
+        },
+        {
+            "id": "MLM1921179703",
+            "site_id": "MLM",
+            "title": "Gorra Mitchell & Ness Los Angeles Lakers Amarilla",
+            "seller_id": 1354839206,
+            "category_id": "MLM430273",
+            "price": 929,
+            "base_price": 929,
+            "currency_id": "MXN",
+            "available_quantity": 3,
+            "pictures": [
+                {
+                    "url": "http://http2.mlstatic.com/D_643791-MLM70607635341_072023-O.jpg",
+                    "size": "500x317",
+                    "max_size": "788x500",
+                    "quality": ""
+                },
+                {
+                    "url": "http://http2.mlstatic.com/D_702895-MLM70607674901_072023-O.jpg",
+                    "size": "500x362",
+                    "max_size": "690x500",
+                    "quality": ""
+                }
+            ],
+            "condition": "new",
+            "variations": [
+                {
+                    "id": 178260171086,
+                    "price": 929,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "52007",
+                            "value_name": "Amarillo",
+                            "values": [
+                                {
+                                    "id": "52007",
+                                    "name": "Amarillo",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": null,
+                            "value_name": "unitalla",
+                            "values": [
+                                {
+                                    "id": null,
+                                    "name": "unitalla",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                }
+            ],
+            "status": "active"
+        },
+        {
+            "id": "MLM1927087025",
+            "site_id": "MLM",
+            "title": "Tenis Vans Unisex Old Skool Negro",
+            "seller_id": 1354839206,
+            "category_id": "MLM6585",
+            "price": 1299,
+            "base_price": 1299,
+            "currency_id": "MXN",
+            "available_quantity": 4,
+            "pictures": [
+                {
+                    "url": "http://http2.mlstatic.com/D_823826-MLM70844838745_082023-O.jpg",
+                    "size": "500x315",
+                    "max_size": "792x500"
+                },
+                {
+                    "url": "http://http2.mlstatic.com/D_908549-MLM70844886143_082023-O.jpg",
+                    "size": "500x316",
+                    "max_size": "789x500"
+                },
+                {
+                    "url": "http://http2.mlstatic.com/D_681448-MLM70844926193_082023-O.jpg",
+                    "size": "437x500",
+                    "max_size": "697x797"
+                }
+            ],
+            "condition": "old",
+            "variations": [
+                {
+                    "id": 179273615025,
+                    "price": 1299,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "52049",
+                            "value_name": "Negro",
+                            "values": [
+                                {
+                                    "id": "52049",
+                                    "name": "Negro",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375847",
+                            "value_name": "23 MX",
+                            "values": [
+                                {
+                                    "id": "11375847",
+                                    "name": "23 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": 179273615027,
+                    "price": 1299,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "52049",
+                            "value_name": "Negro",
+                            "values": [
+                                {
+                                    "id": "52049",
+                                    "name": "Negro",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375848",
+                            "value_name": "23.5 MX",
+                            "values": [
+                                {
+                                    "id": "11375848",
+                                    "name": "23.5 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": 179273615029,
+                    "price": 1299,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "52049",
+                            "value_name": "Negro",
+                            "values": [
+                                {
+                                    "id": "52049",
+                                    "name": "Negro",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375850",
+                            "value_name": "24 MX",
+                            "values": [
+                                {
+                                    "id": "11375850",
+                                    "name": "24 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": 179273615031,
+                    "price": 1299,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "52049",
+                            "value_name": "Negro",
+                            "values": [
+                                {
+                                    "id": "52049",
+                                    "name": "Negro",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375851",
+                            "value_name": "24.5 MX",
+                            "values": [
+                                {
+                                    "id": "11375851",
+                                    "name": "24.5 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": 179273615033,
+                    "price": 1299,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "52049",
+                            "value_name": "Negro",
+                            "values": [
+                                {
+                                    "id": "52049",
+                                    "name": "Negro",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375853",
+                            "value_name": "25 MX",
+                            "values": [
+                                {
+                                    "id": "11375853",
+                                    "name": "25 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": 179273615035,
+                    "price": 1299,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "52049",
+                            "value_name": "Negro",
+                            "values": [
+                                {
+                                    "id": "52049",
+                                    "name": "Negro",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375854",
+                            "value_name": "25.5 MX",
+                            "values": [
+                                {
+                                    "id": "11375854",
+                                    "name": "25.5 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": 179273615037,
+                    "price": 1299,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "52049",
+                            "value_name": "Negro",
+                            "values": [
+                                {
+                                    "id": "52049",
+                                    "name": "Negro",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375855",
+                            "value_name": "26 MX",
+                            "values": [
+                                {
+                                    "id": "11375855",
+                                    "name": "26 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": 179273615039,
+                    "price": 1299,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "52049",
+                            "value_name": "Negro",
+                            "values": [
+                                {
+                                    "id": "52049",
+                                    "name": "Negro",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375856",
+                            "value_name": "26.5 MX",
+                            "values": [
+                                {
+                                    "id": "11375856",
+                                    "name": "26.5 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                }
+            ],
+            "status": "inactive"
+        },
+        {
+            "id": "MLM1927016611",
+            "site_id": "MLM",
+            "title": "Tenis Vans Unisex Authentic Vino",
+            "seller_id": 1354839206,
+            "category_id": "MLM6585",
+            "price": 1099,
+            "base_price": 1099,
+            "currency_id": "MXN",
+            "available_quantity": 6,
+            "pictures": [
+                {
+                    "url": "http://http2.mlstatic.com/D_662406-MLM70844792547_082023-O.jpg",
+                    "size": "500x315",
+                    "max_size": "792x500"
+                },
+                {
+                    "url": "http://http2.mlstatic.com/D_818242-MLM70812440704_082023-O.jpg",
+                    "size": "500x315",
+                    "max_size": "792x500"
+                },
+                {
+                    "url": "http://http2.mlstatic.com/D_634850-MLM70844887901_082023-O.jpg",
+                    "size": "380x500",
+                    "max_size": "660x867"
+                }
+            ],
+            "condition": "new",
+            "variations": [
+                {
+                    "id": 178364715968,
+                    "price": 1099,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "51998",
+                            "value_name": "Bordó",
+                            "values": [
+                                {
+                                    "id": "51998",
+                                    "name": "Bordó",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375853",
+                            "value_name": "25 MX",
+                            "values": [
+                                {
+                                    "id": "11375853",
+                                    "name": "25 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": 178364715966,
+                    "price": 1099,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "51998",
+                            "value_name": "Bordó",
+                            "values": [
+                                {
+                                    "id": "51998",
+                                    "name": "Bordó",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375856",
+                            "value_name": "26.5 MX",
+                            "values": [
+                                {
+                                    "id": "11375856",
+                                    "name": "26.5 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                },
+                {
+                    "id": 180130932245,
+                    "price": 1099,
+                    "attribute_combinations": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_id": "51998",
+                            "value_name": "Bordó",
+                            "values": [
+                                {
+                                    "id": "51998",
+                                    "name": "Bordó",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        },
+                        {
+                            "id": "SIZE",
+                            "name": "Talla",
+                            "value_id": "11375854",
+                            "value_name": "25.5 MX",
+                            "values": [
+                                {
+                                    "id": "11375854",
+                                    "name": "25.5 MX",
+                                    "struct": null
+                                }
+                            ],
+                            "value_type": "string"
+                        }
+                    ]
+                }
+            ],
+            "status": "active"
+        }
+    ]
+}

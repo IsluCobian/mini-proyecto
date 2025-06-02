@@ -17,7 +17,7 @@ const props = defineProps({
 })
 
 const variantClasses = {
-  default: "bg-primary  hover:bg-primary/90",
+  default: "bg-primary text-primary-foreground hover:bg-primary/90",
   outline: "border text-foreground",
   ghost: "bg-transparent",
   icon: "bg-transparent p-2 border",

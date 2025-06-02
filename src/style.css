@@ -117,5 +117,26 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
   }
+}
+
+::-webkit-scrollbar {
+  @apply h-1.5 w-1.5;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #afafaf;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8f8f8f;
 }

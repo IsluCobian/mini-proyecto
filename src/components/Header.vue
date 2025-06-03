@@ -4,7 +4,7 @@ import ThemeToggle from "./ThemeToggle.vue"
 
 <template>
   <header
-    class="flex h-full w-14 flex-col items-center justify-between border-r p-4"
+    class="bg-primary flex h-14 w-full items-center justify-between border-r p-4 text-white md:h-full md:w-14 md:flex-col"
   >
     <h1 class="text-xl leading-none font-bold">SF</h1>
     <ThemeToggle />

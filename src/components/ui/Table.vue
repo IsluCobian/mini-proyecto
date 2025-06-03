@@ -11,7 +11,7 @@ defineProps({
   <div class="bg-background w-full overflow-x-auto rounded border">
     <table class="min-w-full text-sm">
       <thead
-        class="bg-card text-muted-foreground sticky top-0 z-10 border-b text-xs"
+        class="bg-muted text-muted-foreground sticky top-0 z-10 border-b text-xs"
       >
         <tr>
           <th
@@ -19,8 +19,8 @@ defineProps({
             :key="index"
             :class="
               cn(
-                'bg-card w-fit px-4 py-3 text-left whitespace-nowrap',
-                header.sticky && 'sticky left-0 z-10'
+                'w-fit px-4 py-3 text-left whitespace-nowrap',
+                header.sticky && 'bg-muted sticky left-0 z-20'
               )
             "
             :style="
@@ -45,7 +45,7 @@ defineProps({
               :class="
                 cn(
                   'bg-background w-fit px-4 py-1.5 whitespace-nowrap',
-                  col.sticky && 'sticky left-0'
+                  col.sticky && 'sticky left-0 z-10'
                 )
               "
               :style="

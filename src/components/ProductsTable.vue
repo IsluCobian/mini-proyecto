@@ -1,10 +1,5 @@
 <script setup>
 import { cn } from "@/lib/utils.js"
-import { ref, computed } from "vue"
-import Table from "@/components/ui/Table.vue"
-import Button from "@/components/ui/Button.vue"
-import ColumnToggle from "@/components/ui/ColumnToggle.vue"
-import VariantSubTable from "@/components/VariantSubTable.vue"
 import { Trash2, PencilLine, ChevronRight } from "lucide-vue-next"
 
 const { products } = defineProps({
@@ -13,10 +8,21 @@ const { products } = defineProps({
     required: true,
   },
 })
-const productsWithState = ref(products.map((p) => ({ ...p, isOpen: false })))
+const productsWithState = ref([])
+
+watch(
+  () => products,
+  (newProducts) => {
+    productsWithState.value = newProducts.map((p) => ({
+      ...p,
+      isOpen: false,
+    }))
+  },
+  { immediate: true, deep: true }
+)
 const columns = [
   { key: "variations", label: "", sticky: true, stickyLeft: 0 },
-  { key: "title", label: "Título", sticky: true, stickyLeft: 60 },
+  { key: "title", label: "Título" },
   { key: "id", label: "ID" },
   { key: "site_id", label: "ID del Sitio" },
   { key: "seller_id", label: "ID del vendedor" },
@@ -26,7 +32,6 @@ const columns = [
   { key: "initial_quantity", label: "Cant. Inicial" },
   { key: "available_quantity", label: "Cant. disponible" },
   { key: "sold_quantity", label: "Cant. vendida" },
-  { key: "actions", label: "Acciones" },
 ]
 const visibleColumnKeys = ref(columns.map((c) => c.key))
 
@@ -37,25 +42,26 @@ const filteredColumns = computed(() =>
 
 <template>
   <div class="flex flex-col gap-2">
-    <ColumnToggle
-      v-model="visibleColumnKeys"
-      :all-columns="
-        columns.filter(
-          (col) => col.key !== 'variations' && col.key !== 'actions'
-        )
-      "
-    />
+    <div class="flex items-center gap-2">
+      <ColumnToggle
+        v-model="visibleColumnKeys"
+        :all-columns="columns.filter((col) => col.key !== 'variations')"
+      />
+      <AddProductForm />
+    </div>
     <Table :columns="filteredColumns" :data="productsWithState">
       <template #title="{ row }">
         <div class="flex items-center gap-2 truncate">
           <div
-            class="flex size-12 items-center justify-center rounded-sm bg-white p-1"
+            class="relative flex size-12 items-center justify-center overflow-hidden rounded-sm bg-white p-1"
           >
             <img
               :src="row.pictures?.[0]?.url"
+              v-if="row.pictures?.length"
               alt="Producto"
               class="object-contain"
             />
+            <div v-else class="bg-muted absolute inset-0" />
           </div>
           {{ row.title }}
         </div>

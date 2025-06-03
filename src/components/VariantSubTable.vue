@@ -18,25 +18,37 @@ function groupVariationsByColor(variations) {
   const grouped = {}
 
   variations.forEach((variation) => {
-    const colorAttr = variation.attribute_combinations.find(
-      (attr) => attr.name === "Color"
-    )
-    const sizeAttr = variation.attribute_combinations.find(
-      (attr) => attr.name === "Talla"
-    )
+    let color, sizes, price
 
-    const color = colorAttr?.value_name || "Desconocido"
-    const size = sizeAttr?.value_name || "-"
-    const price = variation.price
+    // New format (from form)
+    if ("color" in variation && "sizes" in variation) {
+      color = variation.color
+      sizes = variation.sizes
+      price = variation.price || "-"
+    }
+    // Original format
+    else if ("attribute_combinations" in variation) {
+      const colorAttr = variation.attribute_combinations.find(
+        (attr) => attr.name === "Color"
+      )
+      const sizeAttr = variation.attribute_combinations.find(
+        (attr) => attr.name === "Talla"
+      )
+      color = colorAttr?.value_name || "Desconocido"
+      sizes = [sizeAttr?.value_name || "-"]
+      price = variation.price || "-"
+    }
+
+    if (!color) color = "Desconocido"
 
     if (!grouped[color]) {
       grouped[color] = {
         color,
-        tallas: [size],
+        tallas: [...sizes],
         price,
       }
     } else {
-      grouped[color].tallas.push(size)
+      grouped[color].tallas.push(...sizes)
     }
   })
 

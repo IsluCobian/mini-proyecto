@@ -1,9 +1,23 @@
 <script setup>
 import { cn } from "@/lib/utils.js"
 
-defineProps({
+const props = defineProps({
   columns: Array,
   data: Array,
+  perPage: {
+    type: Number,
+    default: 10,
+  },
+})
+
+const currentPage = ref(1)
+const totalPages = computed(() => {
+  return Math.ceil(props.data.length / props.perPage)
+})
+
+const paginatedData = computed(() => {
+  const start = (currentPage.value - 1) * props.perPage
+  return props.data.slice(start, start + props.perPage)
 })
 </script>
 
@@ -35,7 +49,7 @@ defineProps({
       </thead>
 
       <tbody class="first:border-t-0">
-        <template v-for="(row, rowIndex) in data" :key="rowIndex">
+        <template v-for="(row, rowIndex) in paginatedData" :key="rowIndex">
           <tr
             class="hover:bg-accent even:bg-muted/50 border-t transition-colors"
           >
@@ -82,5 +96,28 @@ defineProps({
         </template>
       </tbody>
     </table>
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="flex items-center justify-between text-xs">
+    <span> Página {{ currentPage }} de {{ totalPages }} </span>
+    <div class="flex items-center gap-2">
+      <Button
+        variant="outline"
+        class="text-xs"
+        :disabled="currentPage === 1"
+        @click="currentPage--"
+      >
+        Anterior
+      </Button>
+      <Button
+        variant="outline"
+        class="text-xs"
+        :disabled="currentPage === totalPages"
+        @click="currentPage++"
+      >
+        Siguiente
+      </Button>
+    </div>
   </div>
 </template>

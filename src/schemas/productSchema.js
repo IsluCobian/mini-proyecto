@@ -1,4 +1,4 @@
-import { object, string, number } from "yup"
+import { object, string, number, array } from "yup"
 
 export const productSchema = object({
   title: string().required("Título requerido"),
@@ -20,4 +20,15 @@ export const productSchema = object({
   sold_quantity: number()
     .typeError("Cantidad vendida debe ser un número")
     .required("Cantidad vendida requerida"),
+  variations: array()
+    .of(
+      object({
+        color: string().required("Color requerido"),
+        sizes: array().of(string()).min(1, "Selecciona al menos una talla"),
+        price: number()
+          .typeError("Precio inválido")
+          .required("Precio de variante requerido"),
+      })
+    )
+    .min(1, "Agrega al menos una variante"),
 })

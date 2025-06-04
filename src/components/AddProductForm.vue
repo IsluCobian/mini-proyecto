@@ -14,6 +14,9 @@ const schema = toTypedSchema(productSchema)
 
 const { handleSubmit, resetForm, errors, meta, defineField } = useForm({
   validationSchema: schema,
+  initialValues: {
+    variations: [],
+  },
 })
 
 const [title] = defineField("title")
@@ -25,10 +28,7 @@ const [base_price] = defineField("base_price")
 const [initial_quantity] = defineField("initial_quantity")
 const [available_quantity] = defineField("available_quantity")
 const [sold_quantity] = defineField("sold_quantity")
-
-const product = ref({
-  variations: [],
-})
+const [variations, variationsAttrs] = defineField("variations")
 
 const newVariation = ref({
   color: "",
@@ -43,26 +43,24 @@ const allSizes = [
 ]
 
 function addVariation() {
-  if (newVariation.value.color && newVariation.value.sizes.length) {
-    product.value.variations.push({ ...newVariation.value })
-    newVariation.value = { color: "", sizes: [] }
+  if (
+    newVariation.value.color &&
+    newVariation.value.sizes.length &&
+    newVariation.value.price
+  ) {
+    variations.value.push({ ...newVariation.value })
+    newVariation.value = { color: "", sizes: [], price: "" }
   }
 }
 
 function removeVariation(index) {
-  product.value.variations.splice(index, 1)
+  variations.value.splice(index, 1)
 }
 
 const onSubmit = handleSubmit((values) => {
-  if (product.value.variations.length === 0) {
-    alert("Agrega al menos una variación")
-    return
-  }
-
-  addProduct({ ...values, variations: product.value.variations })
+  addProduct(values)
   open.value = false
   resetForm()
-  product.value.variations = []
 })
 </script>
 
@@ -167,26 +165,28 @@ const onSubmit = handleSubmit((values) => {
             type="number"
           />
         </div>
+        <div class="flex flex-col items-start">
+          <span v-if="errors.variations" class="text-xs text-red-500">
+            {{ errors.variations }}
+          </span>
 
-        <Button
-          class="mt-2 text-xs"
-          variant="outline"
-          @click.prevent="addVariation"
-        >
-          Añadir Variante
-        </Button>
+          <Button
+            class="mt-2 text-xs"
+            variant="outline"
+            @click.prevent="addVariation"
+          >
+            Añadir Variante
+          </Button>
+        </div>
 
-        <div
-          v-if="product.variations.length"
-          class="max-h-16 space-y-1 overflow-y-auto"
-        >
+        <div v-if="variations" class="max-h-16 space-y-1 overflow-y-auto">
           <div
-            v-for="(variation, index) in product.variations"
+            v-for="(variation, index) in variations"
             :key="index"
             class="flex items-center justify-between rounded-md border px-2 py-1 text-xs"
           >
             <div>
-              <span class="font-semibold">Color:</span> {{ variation.color }},
+              <span class="font-semibold">Color:</span> {{ variation.color }}
               <span class="font-semibold">Tallas:</span>
               {{ variation.sizes.join(", ") }}
             </div>

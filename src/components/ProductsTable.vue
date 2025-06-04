@@ -1,6 +1,6 @@
 <script setup>
 import { cn } from "@/lib/utils.js"
-import { Trash2, PencilLine, ChevronRight } from "lucide-vue-next"
+import { Trash2, PencilLine, ChevronRight, RefreshCw } from "lucide-vue-next"
 
 const { products } = defineProps({
   products: {
@@ -8,6 +8,8 @@ const { products } = defineProps({
     required: true,
   },
 })
+
+const { reset } = useProducts()
 const productsWithState = ref([])
 
 const selectProduct = defineEmits(["selectProduct"])
@@ -59,6 +61,9 @@ function openGallery(images, title) {
         :all-columns="columns.filter((col) => col.key !== 'variations')"
       />
       <AddProductForm />
+      <Button variant="icon" @click="reset()">
+        <RefreshCw />
+      </Button>
     </div>
     <Table :columns="filteredColumns" :data="productsWithState">
       <template #title="{ row }">

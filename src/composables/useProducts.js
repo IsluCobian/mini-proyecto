@@ -8,8 +8,18 @@ export function useProducts() {
     products.value.push(product)
   }
 
+  const reset = () => {
+    products.value = [...data.products]
+  }
+
+  const deleteProduct = (id) => {
+    products.value = products.value.filter((p) => p.id !== id)
+  }
+
   return {
     products,
+    reset,
     addProduct,
+    deleteProduct,
   }
 }

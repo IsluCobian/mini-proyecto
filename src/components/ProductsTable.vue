@@ -10,6 +10,7 @@ const { products } = defineProps({
 })
 const productsWithState = ref([])
 
+const selectProduct = defineEmits(["selectProduct"])
 watch(
   () => products,
   (newProducts) => {
@@ -38,6 +39,16 @@ const visibleColumnKeys = ref(columns.map((c) => c.key))
 const filteredColumns = computed(() =>
   columns.filter((col) => visibleColumnKeys.value.includes(col.key))
 )
+
+const selectedImages = ref([])
+const selectedTitle = ref("")
+const showGallery = ref(false)
+
+function openGallery(images, title) {
+  selectedImages.value = images
+  selectedTitle.value = title
+  showGallery.value = true
+}
 </script>
 
 <template>
@@ -58,8 +69,9 @@ const filteredColumns = computed(() =>
             <img
               :src="row.pictures?.[0]?.url"
               v-if="row.pictures?.length"
+              @click="openGallery(row.pictures, row.title)"
               alt="Producto"
-              class="object-contain"
+              class="cursor-pointer object-contain"
             />
             <div v-else class="bg-muted absolute inset-0" />
           </div>
@@ -93,5 +105,10 @@ const filteredColumns = computed(() =>
         </Button>
       </template>
     </Table>
+    <ImageModal
+      :title="selectedTitle"
+      :images="selectedImages"
+      v-model="showGallery"
+    />
   </div>
 </template>

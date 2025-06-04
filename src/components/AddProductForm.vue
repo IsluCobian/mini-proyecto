@@ -141,7 +141,7 @@ const onSubmit = handleSubmit((values) => {
 
       <!-- Variaciones -->
       <div class="space-y-2">
-        <h3 class="text-sm font-medium">Variaciones</h3>
+        <h3 class="text-sm font-medium">Variantes</h3>
         <div class="grid grid-cols-3 gap-4 text-xs">
           <!-- Color  -->
           <Select
@@ -173,7 +173,7 @@ const onSubmit = handleSubmit((values) => {
           variant="outline"
           @click.prevent="addVariation"
         >
-          Añadir Variación
+          Añadir Variante
         </Button>
 
         <div

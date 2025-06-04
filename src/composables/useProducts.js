@@ -16,10 +16,18 @@ export function useProducts() {
     products.value = products.value.filter((p) => p.id !== id)
   }
 
+  const updateProduct = (id, values) => {
+    const index = products.value.findIndex((p) => p.id === id)
+    if (index === -1) return
+
+    products.value.splice(index, 1, { ...products.value[index], ...values })
+  }
+
   return {
     products,
     reset,
     addProduct,
     deleteProduct,
+    updateProduct,
   }
 }

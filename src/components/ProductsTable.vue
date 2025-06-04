@@ -35,6 +35,7 @@ const columns = [
   { key: "initial_quantity", label: "Cant. Inicial" },
   { key: "available_quantity", label: "Cant. disponible" },
   { key: "sold_quantity", label: "Cant. vendida" },
+  { key: "actions", label: "Acciones" },
 ]
 const visibleColumnKeys = ref(columns.map((c) => c.key))
 
@@ -51,6 +52,19 @@ function openGallery(images, title) {
   selectedTitle.value = title
   showGallery.value = true
 }
+
+const showModal = ref(false)
+const selectedProduct = ref(null)
+
+function openForAdd() {
+  selectedProduct.value = null
+  showModal.value = true
+}
+
+function openForEdit(product) {
+  selectedProduct.value = product
+  showModal.value = true
+}
 </script>
 
 <template>
@@ -60,7 +74,7 @@ function openGallery(images, title) {
         v-model="visibleColumnKeys"
         :all-columns="columns.filter((col) => col.key !== 'variations')"
       />
-      <AddProductForm />
+      <Button @click="openForAdd">Añadir Producto</Button>
       <Button variant="icon" @click="reset()">
         <RefreshCw />
       </Button>
@@ -102,7 +116,7 @@ function openGallery(images, title) {
       </template>
 
       <template #actions="{ row }">
-        <Button variant="icon">
+        <Button variant="icon" @click="openForEdit(row)">
           <PencilLine />
         </Button>
         <Button variant="icon" class="group hover:bg-red-500">
@@ -115,5 +129,6 @@ function openGallery(images, title) {
       :images="selectedImages"
       v-model="showGallery"
     />
+    <ProductModal v-model="showModal" :product="selectedProduct" />
   </div>
 </template>

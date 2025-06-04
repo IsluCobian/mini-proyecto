@@ -37,16 +37,10 @@ const newVariation = ref({
 })
 
 const allColors = ["Rojo", "Azul", "Verde", "Negro", "Blanco"]
-const allSizes = Array.from({ length: 11 }, (_, i) => `${21 + i}MX`)
-const uniqueSize = "Única"
-
-// Lógica para deshabilitar tallas si se seleccionó Única y viceversa
-const disableSizes = computed(() =>
-  newVariation.value.sizes.includes(uniqueSize)
-)
-const disableUniqueSize = computed(() =>
-  newVariation.value.sizes.some((s) => allSizes.includes(s))
-)
+const allSizes = [
+  "Única",
+  ...Array.from({ length: 11 }, (_, i) => `${21 + i}MX`),
+]
 
 function addVariation() {
   if (newVariation.value.color && newVariation.value.sizes.length) {
@@ -148,7 +142,7 @@ const onSubmit = handleSubmit((values) => {
       <!-- Variaciones -->
       <div class="space-y-2">
         <h3 class="text-sm font-medium">Variaciones</h3>
-        <div class="flex w-full gap-4">
+        <div class="grid grid-cols-3 gap-4 text-xs">
           <!-- Color  -->
           <Select
             v-model="newVariation.color"
@@ -159,26 +153,14 @@ const onSubmit = handleSubmit((values) => {
             "
           />
 
-          <!-- Tallas múltiples + opción de Única -->
+          <!-- Tallas  -->
+          <SizesSelector
+            v-model="newVariation.sizes"
+            label="Tallas"
+            :options="allSizes"
+            :placeholder="'Selecciona tallas'"
+          />
 
-          <div class="flex items-end gap-2">
-            <SizesSelector
-              v-model="newVariation.sizes"
-              label="Tallas"
-              :options="allSizes"
-              :placeholder="'Selecciona tallas'"
-              :disabled="disableSizes"
-            />
-            <label class="flex items-center gap-1 text-xs">
-              <input
-                type="checkbox"
-                :value="uniqueSize"
-                v-model="newVariation.sizes"
-                :disabled="disableUniqueSize"
-              />
-              {{ uniqueSize }}
-            </label>
-          </div>
           <Input
             v-model="newVariation.price"
             label="Precio (MXN)"

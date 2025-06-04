@@ -42,7 +42,7 @@ const displayText = computed(() =>
 </script>
 
 <template>
-  <div ref="root" class="relative w-full" :class="class">
+  <div ref="root" class="w-full" :class="class">
     <label
       v-if="label"
       class="text-muted-foreground mb-1 block text-xs font-medium"
@@ -51,7 +51,7 @@ const displayText = computed(() =>
     </label>
 
     <div
-      class="focus-within:ring-primary/40 w-40 rounded border px-2 py-1 text-sm transition focus-within:ring-2"
+      class="focus-within:ring-primary/40 hover:bg-muted/40 w-40 cursor-pointer rounded border px-2 py-1 text-sm transition focus-within:ring-2"
       :class="[
         error ? 'border-red-500' : 'border-border',
         disabled &&
@@ -66,8 +66,7 @@ const displayText = computed(() =>
 
     <div
       v-if="dropdownOpen"
-      @focusout="onFocusOut"
-      class="border-border absolute z-10 mt-1 max-h-48 w-full overflow-auto rounded border bg-white p-2 shadow-md"
+      class="border-border absolute z-10 mt-1 max-h-24 w-40 overflow-auto rounded border bg-white p-2 shadow-md"
     >
       <label
         v-for="size in options"

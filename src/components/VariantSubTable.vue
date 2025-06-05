@@ -60,8 +60,9 @@ function groupVariationsByColor(variations) {
 </script>
 
 <template>
-  <div class="ml-5 w-2/3 p-3 pt-1">
-    <h2 class="text-muted-foreground mb-2 text-sm font-semibold">Variantes</h2>
-    <Table :columns="columns" :data="groupVariationsByColor(variations)" />
-  </div>
+  <Table
+    :columns="columns"
+    :data="groupVariationsByColor(variations)"
+    :paginated="false"
+  />
 </template>

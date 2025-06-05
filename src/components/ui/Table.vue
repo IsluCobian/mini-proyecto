@@ -8,6 +8,10 @@ const props = defineProps({
     type: Number,
     default: 10,
   },
+  paginated: {
+    type: Boolean,
+    default: true,
+  },
 })
 
 const currentPage = ref(1)
@@ -22,18 +26,16 @@ const paginatedData = computed(() => {
 </script>
 
 <template>
-  <div class="bg-background w-full overflow-x-auto rounded border">
+  <div class="bg-background w-full overflow-x-auto">
     <table class="min-w-full text-sm">
-      <thead
-        class="bg-muted text-muted-foreground sticky top-0 z-10 border-b text-xs"
-      >
+      <thead class="text-muted-foreground sticky top-0 z-10 border-b text-xs">
         <tr>
           <th
             v-for="(header, index) in columns"
             :key="index"
             :class="
               cn(
-                'w-fit px-4 py-3 text-left whitespace-nowrap',
+                'w-fit px-4 py-3 text-left font-light whitespace-nowrap',
                 header.sticky && 'bg-muted sticky left-0 z-20'
               )
             "
@@ -50,16 +52,14 @@ const paginatedData = computed(() => {
 
       <tbody class="first:border-t-0">
         <template v-for="(row, rowIndex) in paginatedData" :key="rowIndex">
-          <tr
-            class="hover:bg-accent even:bg-muted/50 border-t transition-colors"
-          >
+          <tr class="border-t">
             <td
               v-for="(col, colIndex) in columns"
               :key="colIndex"
               :class="
                 cn(
-                  'bg-background w-fit px-4 py-1.5 whitespace-nowrap',
-                  col.sticky && 'sticky left-0 z-10'
+                  'w-fit px-4 py-1.5 whitespace-nowrap',
+                  col.sticky && 'bg-background sticky left-0 z-10'
                 )
               "
               :style="
@@ -78,7 +78,6 @@ const paginatedData = computed(() => {
               </slot>
             </td>
           </tr>
-
           <tr>
             <td :colspan="columns.length" class="p-0">
               <div
@@ -99,7 +98,7 @@ const paginatedData = computed(() => {
   </div>
 
   <!-- Pagination controls -->
-  <div class="flex items-center justify-between text-xs">
+  <div v-if="paginated" class="flex items-center justify-between text-xs">
     <span> Página {{ currentPage }} de {{ totalPages }} </span>
     <div class="flex items-center gap-2">
       <Button

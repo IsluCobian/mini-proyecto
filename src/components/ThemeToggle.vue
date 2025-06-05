@@ -31,11 +31,12 @@ function toggleTheme() {
 </script>
 
 <template>
-  <button
+  <Button
     @click="toggleTheme"
-    class="border-border hover:bg-muted cursor-pointer rounded-full border p-2 transition-all"
+    variant="icon"
+    class="border-0 hover:bg-white/20 hover:text-white"
     :aria-label="`Toggle ${theme === 'dark' ? 'light' : 'dark'} mode`"
   >
     <component :is="theme === 'dark' ? Sun : Moon" class="size-5" />
-  </button>
+  </Button>
 </template>

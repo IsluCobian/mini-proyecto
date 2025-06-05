@@ -20,7 +20,7 @@ const variantClasses = {
   default: "bg-primary text-primary-foreground hover:bg-primary/90",
   outline: "border text-foreground",
   ghost: "bg-transparent",
-  icon: "bg-transparent p-2 border",
+  icon: "bg-transparent p-2.5 border hover:text-primary hover:bg-primary/20 hover:border-primary",
 }
 </script>
 

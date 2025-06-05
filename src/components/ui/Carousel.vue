@@ -69,7 +69,7 @@ function setIndex(index) {
         v-for="(image, index) in images"
         :key="index"
         @click="setIndex(index)"
-        class="h-2 w-2 rounded-full"
+        class="h-2 w-2 rounded-full transition-colors duration-200"
         :class="{
           'bg-primary': index === currentIndex,
           'bg-muted': index !== currentIndex,

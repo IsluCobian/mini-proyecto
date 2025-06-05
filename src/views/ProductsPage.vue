@@ -55,7 +55,7 @@ function viewGallery(row) {
 </script>
 
 <template>
-  <main class="flex-1 space-y-3 overflow-x-auto p-5">
+  <main class="scrollbar flex-1 space-y-3 overflow-x-auto p-5">
     <div>
       <h2 class="text-lg font-semibold md:text-2xl">Gestión de Productos</h2>
       <p class="text-muted-foreground text-sm">

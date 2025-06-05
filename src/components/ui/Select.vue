@@ -38,7 +38,7 @@ const inputId = computed(
       :disabled="disabled"
       @change="$emit('update:modelValue', $event.target.value)"
       :class="[
-        'focus:ring-primary/40 hover:bg-muted/40 cursor-pointer rounded border px-2 py-1 text-sm transition focus:ring-2 focus:outline-none',
+        'focus:ring-primary/40 bg-card cursor-pointer rounded border px-2 py-1 text-sm transition focus:ring-2 focus:outline-none',
         error ? 'border-red-500' : 'border-border',
         disabled && 'bg-muted cursor-not-allowed opacity-70',
         selectClass,

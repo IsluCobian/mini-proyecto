@@ -87,10 +87,14 @@ function confirmDelete() {
     <div class="flex items-center gap-2">
       <ColumnToggle
         v-model="visibleColumnKeys"
-        :all-columns="columns.filter((col) => col.key !== 'variations')"
+        :all-columns="
+          columns.filter(
+            (col) => col.key !== 'variations' && col.key !== 'actions'
+          )
+        "
       />
       <Button @click="openForAdd">Añadir Producto</Button>
-      <Button variant="icon" @click="reset()">
+      <Button variant="icon" @click="reset()" title="Reiniciar tabla">
         <RefreshCw />
       </Button>
     </div>

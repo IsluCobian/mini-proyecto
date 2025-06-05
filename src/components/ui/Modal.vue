@@ -60,7 +60,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", handleKey))
             <div class="modal-body">
               <slot />
             </div>
-            <div v-if="$slots.footer" class="modal-footer mt-4">
+            <div v-if="$slots.footer" class="mt-4 flex justify-end gap-2">
               <slot name="footer" />
             </div>
           </div>

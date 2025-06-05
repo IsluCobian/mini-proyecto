@@ -9,7 +9,7 @@ const { products } = defineProps({
   },
 })
 
-const { reset } = useProducts()
+const { reset, deleteProduct } = useProducts()
 const productsWithState = ref([])
 
 const selectProduct = defineEmits(["selectProduct"])
@@ -65,6 +65,21 @@ function openForEdit(product) {
   selectedProduct.value = product
   showModal.value = true
 }
+
+const confirmDeleteModal = ref(false)
+const productToDelete = ref(null)
+
+function askToDelete(product) {
+  productToDelete.value = product
+  confirmDeleteModal.value = true
+}
+
+function confirmDelete() {
+  if (productToDelete.value) {
+    deleteProduct(productToDelete.value.id)
+    productToDelete.value = null
+  }
+}
 </script>
 
 <template>
@@ -119,7 +134,11 @@ function openForEdit(product) {
         <Button variant="icon" @click="openForEdit(row)">
           <PencilLine />
         </Button>
-        <Button variant="icon" class="group hover:bg-red-500">
+        <Button
+          variant="icon"
+          @click="askToDelete(row)"
+          class="group hover:bg-red-500"
+        >
           <Trash2 class="group-hover:text-background" />
         </Button>
       </template>
@@ -130,5 +149,10 @@ function openForEdit(product) {
       v-model="showGallery"
     />
     <ProductModal v-model="showModal" :product="selectedProduct" />
+    <ConfirmDeleteModal
+      v-model="confirmDeleteModal"
+      :item="productToDelete"
+      @confirm="confirmDelete"
+    />
   </div>
 </template>

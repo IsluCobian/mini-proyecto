@@ -63,7 +63,9 @@ function viewGallery(row) {
       </p>
     </div>
 
-    <div class="flex items-center justify-between">
+    <div
+      class="flex flex-col justify-between gap-2 md:flex-row md:items-center"
+    >
       <SearchBar v-model="searchQuery" />
       <div class="flex items-center space-x-2">
         <Button @click="openForAdd"><Plus />Añadir Producto</Button>

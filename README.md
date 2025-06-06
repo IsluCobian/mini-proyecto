@@ -54,14 +54,36 @@ pnpm run dev
 - **Lucide Icons** - Librería de íconos
 - **VeeValidate + Yup** - Validación y manejo de estado de formularios
 
-## 🎨 Exploración de Diseño
+## 🔧 Mejoras Potenciales
 
-Aunque el proyecto implementa una interfaz basada en una tabla tradicional, más conservadora y familiar para los usuarios, también se exploró una versión alternativa centrada en una experiencia más visual y fluida para el usuario.
+### 🎨 Mejoras en la Visualización de Variantes
 
-### 🧪 Diseño Experimental
+- Implementar chips visuales para mostrar los colores de las variantes
+- Mejorar la visualización de tallas con un selector más intuitivo
 
-#### Características destacadas del diseño:
+### 📝 Mejoras en Formularios
 
-- Vista dividida estilo master-detail: lista de productos a la izquierda, detalle completo a la derecha.
-- Interacciones más visuales, con imágenes destacadas del producto y navegación más intuitiva.
-- Sistema de variantes con color y talla presentados como chips visuales.
+- Implementar comboboxes inteligentes para:
+  - Selección de categorías
+  - Selección de sitios
+  - Selección de vendedores
+- Añadir búsqueda y filtrado en tiempo real en los comboboxes
+- Implementar autocompletado para reducir errores de entrada
+
+### 🛠️ Mejoras en la Gestión de Variantes
+
+- Rediseñar el formulario de variantes para una mejor experiencia de usuario
+- Implementar arrastrar y soltar para reordenar variantes
+- Implementar la edicion de variantes
+
+### 🔍 Mejoras Generales
+
+- Añadir filtros por múltiples criterios
+- Mejorar la paginación y el sistema de ordenamiento
+- Implementar exportación de datos en diferentes formatos
+
+### 📱 Mejoras en la Responsividad
+
+- Optimizar la interfaz para dispositivos móviles
+- Mejorar la experiencia táctil en formularios
+- Implementar gestos para acciones comunes

@@ -51,7 +51,7 @@ const props = defineProps({
         Variantes del producto
       </h3>
       <div class="bg-background overflow-hidden rounded-lg border">
-        <VariantSubTable :variations="item.variations" />
+        <VariantSubTable :variations="item.variations" :product-id="item.id" />
       </div>
     </div>
   </div>

@@ -18,6 +18,10 @@ const props = defineProps({
   error: String,
   class: String,
   disabled: Boolean,
+  multiple: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits(["update:modelValue"])
@@ -29,20 +33,21 @@ const uniqueSize = "Única"
 
 function toggleSize(size) {
   let newValue = [...props.modelValue]
-
   const isSelected = newValue.includes(size)
-
-  if (isSelected) {
-    newValue = newValue.filter((s) => s !== size)
-  } else {
-    if (size === uniqueSize) {
-      newValue = [uniqueSize]
+  if (props.multiple) {
+    if (isSelected) {
+      newValue = newValue.filter((s) => s !== size)
     } else {
-      newValue = newValue.filter((s) => s !== uniqueSize)
-      newValue.push(size)
+      if (size === uniqueSize) {
+        newValue = [uniqueSize]
+      } else {
+        newValue = newValue.filter((s) => s !== uniqueSize)
+        newValue.push(size)
+      }
     }
+  } else {
+    newValue = [size]
   }
-
   emit("update:modelValue", newValue)
 }
 
@@ -51,6 +56,18 @@ const isUniqueSelected = computed(() => props.modelValue.includes(uniqueSize))
 const displayText = computed(() =>
   props.modelValue.length ? props.modelValue.join(", ") : props.placeholder
 )
+
+const getLabelClass = (size) => {
+  let base = 'hover:bg-muted flex cursor-pointer items-center gap-2 px-1 py-1 text-sm';
+  if (
+    props.multiple &&
+    ((isUniqueSelected.value && size !== uniqueSize) ||
+      (size === uniqueSize && props.modelValue.length > 0 && !isUniqueSelected.value))
+  ) {
+    base += ' text-muted-foreground';
+  }
+  return base;
+};
 </script>
 
 <template>
@@ -83,24 +100,17 @@ const displayText = computed(() =>
       <label
         v-for="size in options"
         :key="size"
-        :class="[
-          'hover:bg-muted flex cursor-pointer items-center gap-2 px-1 py-1 text-sm',
-          ((isUniqueSelected && size !== uniqueSize) ||
-            (size === uniqueSize &&
-              modelValue.length > 0 &&
-              !isUniqueSelected)) &&
-            'text-muted-foreground',
-        ]"
+        :class="getLabelClass(size)"
       >
         <input
           type="checkbox"
           :value="size"
           :checked="modelValue.includes(size)"
           @change.prevent="toggleSize(size)"
-          :disabled="
-            (isUniqueSelected && size !== uniqueSize) ||
-            (size === uniqueSize && modelValue.length > 0 && !isUniqueSelected)
-          "
+          :disabled="props.multiple
+            ? (isUniqueSelected && size !== uniqueSize) ||
+              (size === uniqueSize && modelValue.length > 0 && !isUniqueSelected)
+            : false"
         />
         {{ size }}
       </label>

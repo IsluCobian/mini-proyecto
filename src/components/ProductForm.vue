@@ -156,6 +156,7 @@ onMounted(() => {
           v-model="newVariation.sizes"
           label="Tallas"
           :options="allSizes"
+          multiple
         />
         <Input
           v-model="newVariation.price"
